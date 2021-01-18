@@ -41,6 +41,10 @@
 !/.config/
 !/.config/*.json
 
+# Add paket targets
+!/.paket/
+!/.paket/Paket.Restore.targets
+
 # Add github folder
 !/.github
 !/.github/*
