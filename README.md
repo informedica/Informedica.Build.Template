@@ -8,8 +8,8 @@
 
 GitHub Actions |
 :---: |
-[![GitHub Actions](https://github.com/MyGithubUsername/Informedica.Build.Template/workflows/Build%20master/badge.svg)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
-[![Build History](https://buildstats.info/github/chart/MyGithubUsername/Informedica.Build.Template)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
+[![GitHub Actions](https://github.com/Informedica/Informedica.Build.Template/workflows/Build%20master/badge.svg)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
+[![Build History](https://buildstats.info/github/chart/Informedica/Informedica.Build.Template)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
 
 ## NuGet 
 
