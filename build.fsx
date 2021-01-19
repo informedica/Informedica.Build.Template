@@ -602,7 +602,7 @@ let gitRelease _ =
     !! "src/**/AssemblyInfo.fs"
         |> Seq.iter (Git.Staging.stageFile "" >> ignore)
 
-    Git.Commit.exec "" (sprintf "chore: bump version to %s\n\n%s" latestEntry.NuGetVersion releaseNotesGitCommitFormat)
+    Git.Commit.exec "" (sprintf "release: bump version to %s\n\n%s" latestEntry.NuGetVersion releaseNotesGitCommitFormat)
     Git.Branches.push ""
 
     let tag = tagFromVersionNumber latestEntry.NuGetVersion
@@ -621,6 +621,7 @@ let githubRelease _ =
     // Get release notes with properly-linked version number
     let releaseNotes = latestEntry |> Changelog.mkReleaseNotes linkReferenceForLatestEntry
 
+    let gitOwner = "halcwb"
     GitHub.createClientWithToken token
     |> GitHub.draftNewRelease gitOwner gitRepoName (tagFromVersionNumber latestEntry.NuGetVersion) (latestEntry.SemVer.PreRelease <> None) (releaseNotes |> Seq.singleton)
     |> GitHub.uploadFiles files
@@ -719,7 +720,7 @@ Target.create "ReleaseDocs" releaseDocs
 
 "DotnetRestore"
     ==> "DotnetBuild"
-    ==> "FSharpAnalyzers"
+//    ==> "FSharpAnalyzers"
     ==> "DotnetTest"
     =?> ("GenerateCoverageReport", not disableCodeCoverage)
     ==> "DotnetPack"
