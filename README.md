@@ -1,6 +1,18 @@
 # Informedica.Build.Template
 
-[Enter useful description for Informedica.Build.Template]
+This is mainly the [MiniScaffold](https://github.com/TheAngryBird/MiniScaffold) project, with
+a few additions:
+
+- In the build script there is a `#r nuget: ...` section that enables the build script or parts
+being run in the regular FSI. Very usefull to get to know the build script, debugging and tweaking.
+- The doc tool contains a [bug fix](https://github.com/TheAngryByrd/MiniScaffold/issues/225).
+- This repository has a .gitignore with an 'opt-in' strategy. Meaning that you need to specifiy exactly 
+what will be included in the repository. This prevents accidental addtion of, for example, sensitive
+material. It also makes explicit what is needed for a clean build, preventing all sort of pollution
+with unneeded files.
+
+The project is just a dummy project. There is a [detailed description](https://github.com/informedica/Informedica.Build.Template/blob/master/MiniScaffold.md) how to port an existing
+project to the MiniScaffold setup.
 
 ---
 
@@ -8,8 +20,8 @@
 
 GitHub Actions |
 :---: |
-[![GitHub Actions](https://github.com/Informedica/Informedica.Build.Template/workflows/Build%20master/badge.svg)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
-[![Build History](https://buildstats.info/github/chart/Informedica/Informedica.Build.Template)](https://github.com/MyGithubUsername/Informedica.Build.Template/actions?query=branch%3Amaster) |
+[![GitHub Actions](https://github.com/Informedica/Informedica.Build.Template/workflows/Build%20master/badge.svg)](https://github.com/informedica/Informedica.Build.Template/actions?query=branch%3Amaster) |
+[![Build History](https://buildstats.info/github/chart/Informedica/Informedica.Build.Template)](https://github.com/informedica/Informedica.Build.Template/actions?query=branch%3Amaster) |
 
 ## NuGet 
 
@@ -88,6 +100,10 @@ src/MyCoolNewLib/bin/
 - `WatchDocs` - Generates documentation and starts a webserver locally.  It will rebuild and hot reload if it detects any changes made to `docsSrc` files, libraries in `src`, or the `docsTool` itself.
 - `ReleaseDocs` - Will stage, commit, and push docs generated in the `BuildDocs` target.
 - [`Release`](#Releasing) - Task that runs all release type tasks such as `PublishToNuGet`, `GitRelease`, `ReleaseDocs`, and `GitHubRelease`. Make sure to read [Releasing](#Releasing) to setup your environment correctly for releases.
+
+**Tip**
+You can run an individual target isolated by: `fake run build.fsx -s -t <TargetName>`. The t for target, the s for 'single', meaning no dependencies.
+ 
 ---
 
 
@@ -162,4 +178,15 @@ macOS/Linux Environment Variable:
 RELEASE_VERSION=0.2.0 ./build.sh Release
 ```
 
+### Git push tags
 
+I use the following tags for pushing changes to git:
+
+- release
+- feat: new feature
+- fix: fix a bug or problem
+- docs: document
+- refactor: refactoring
+- perf: improve performance
+- test: add test
+- chore: do a chore (build, libs, etc..)

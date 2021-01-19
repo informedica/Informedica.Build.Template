@@ -621,7 +621,7 @@ let githubRelease _ =
     // Get release notes with properly-linked version number
     let releaseNotes = latestEntry |> Changelog.mkReleaseNotes linkReferenceForLatestEntry
 
-    let gitOwner = "halcwb"
+//    let gitOwner = "halcwb"
     GitHub.createClientWithToken token
     |> GitHub.draftNewRelease gitOwner gitRepoName (tagFromVersionNumber latestEntry.NuGetVersion) (latestEntry.SemVer.PreRelease <> None) (releaseNotes |> Seq.singleton)
     |> GitHub.uploadFiles files
