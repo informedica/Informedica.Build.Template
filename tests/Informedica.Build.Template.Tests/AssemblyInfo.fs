@@ -4,20 +4,20 @@ open System.Reflection
 
 [<assembly: AssemblyTitleAttribute("Informedica.Build.Template.Tests")>]
 [<assembly: AssemblyProductAttribute("Informedica.Build.Template")>]
-[<assembly: AssemblyVersionAttribute("1.1.2")>]
+[<assembly: AssemblyVersionAttribute("1.1.3")>]
 [<assembly: AssemblyMetadataAttribute("ReleaseDate","2021-01-19T00:00:00.0000000+01:00")>]
-[<assembly: AssemblyFileVersionAttribute("1.1.2")>]
-[<assembly: AssemblyInformationalVersionAttribute("1.1.2")>]
+[<assembly: AssemblyFileVersionAttribute("1.1.3")>]
+[<assembly: AssemblyInformationalVersionAttribute("1.1.3")>]
 [<assembly: AssemblyMetadataAttribute("ReleaseChannel","release")>]
-[<assembly: AssemblyMetadataAttribute("GitHash","b438f001e18f3c0ec1c56c68c78421ae7ca8400c")>]
+[<assembly: AssemblyMetadataAttribute("GitHash","5b4cf2a89f13f56fc78f6541dfaf990b3bceb12c")>]
 do ()
 
 module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyTitle = "Informedica.Build.Template.Tests"
     let [<Literal>] AssemblyProduct = "Informedica.Build.Template"
-    let [<Literal>] AssemblyVersion = "1.1.2"
+    let [<Literal>] AssemblyVersion = "1.1.3"
     let [<Literal>] AssemblyMetadata_ReleaseDate = "2021-01-19T00:00:00.0000000+01:00"
-    let [<Literal>] AssemblyFileVersion = "1.1.2"
-    let [<Literal>] AssemblyInformationalVersion = "1.1.2"
+    let [<Literal>] AssemblyFileVersion = "1.1.3"
+    let [<Literal>] AssemblyInformationalVersion = "1.1.3"
     let [<Literal>] AssemblyMetadata_ReleaseChannel = "release"
-    let [<Literal>] AssemblyMetadata_GitHash = "b438f001e18f3c0ec1c56c68c78421ae7ca8400c"
+    let [<Literal>] AssemblyMetadata_GitHash = "5b4cf2a89f13f56fc78f6541dfaf990b3bceb12c"
